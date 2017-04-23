@@ -18,7 +18,7 @@ class CalculationsController < ApplicationController
     @months =  @number_of_years*12
     @monthly_rate = @basis_points/1200
 
-    @rounded_dollars = sprintf("%.2f", (@present_value*(@monthly_rate*(1+@monthly_rate)**@months) / ((1+@monthly_rate)**@months - 1)))
+    @payment = (@present_value*(@monthly_rate*(1+@monthly_rate)**@months) / ((1+@monthly_rate)**@months - 1))
 
     render("calculations/flexible_payment.html.erb")
   end
@@ -54,11 +54,11 @@ end
 
 def payment
     @apr = params[:user_apr].to_f
-    @years = params[:user_years].to_f.round(0)
-    @principal = params[:user_principal].to_f.round(0)
+    @years = params[:user_years].to_f
+    @principal = params[:user_principal].to_f
     @months =  @years*12
     @monthly_rate = @apr/1200
-    @rounded_dollars = sprintf("%.2f", (@principal*(@monthly_rate*(1+@monthly_rate)**@months) / ((1+@monthly_rate)**@months - 1)))
+    @payment = (@principal*(@monthly_rate*(1+@monthly_rate)**@months) / ((1+@monthly_rate)**@months - 1))
     render("calculations/payment.html.erb")
 end
 

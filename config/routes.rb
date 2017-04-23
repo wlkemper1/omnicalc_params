@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     :action => "flexible_square"
   })
 
-  get("/flexible/squareroot/:num", {
+  get("/flexible/square_root/:num", {
     :controller => "calculations",
     :action => "flexible_squareroot"
   })

@@ -2,22 +2,22 @@
 
 <form action="/payment/results">
   <div>
-  <label>
+  <label for="apr">
     APR
   </label>
-  <input type ="text" name="user_apr" placeholder="e.g., 5.1% would be 5.1">
+  <input type ="text" name="user_apr" placeholder="e.g., 5.1% would be 5.1" id="apr">
   </div>
   <div>
-  <label>
-    Number of Years
+  <label for="years">
+    Number of years
   </label>
-  <input type ="text" name="user_years" placeholder="e.g., 10 years would be 10">
+  <input type ="text" name="user_years" placeholder="e.g., 10 years would be 10" id="years">
   </div>
   <div>
-  <label>
+  <label for="principal">
     Principal
   </label>
-  <input type ="text" name="user_principal" placeholder="e.g., $5000 would be 5000">
+  <input type ="text" name="user_principal" placeholder="e.g., $5000 would be 5000" id="principal">
   </div>
 
   <button>Calculate monthly payment</button>
